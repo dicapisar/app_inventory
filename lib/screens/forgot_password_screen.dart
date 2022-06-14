@@ -2,8 +2,8 @@ import 'package:app_inventory/themes/app_theme.dart';
 import 'package:app_inventory/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class ForgotPasswordScreen extends StatelessWidget {
+  const ForgotPasswordScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,12 @@ class LoginScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
             child: Column(children: [
               const Text(
-                'Bienvenido a App Inventory',
+                'Recuperar',
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              const Text(
+                'Contraseña',
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
@@ -27,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                 height: 20,
               ),
               const Image(
-                image: AssetImage('assets/images/logo.png'),
+                image: AssetImage('assets/images/forgot_password.png'),
                 fit: BoxFit.contain,
                 width: 200,
               ),
@@ -39,9 +44,9 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     CustomInputField(
-                      labelText: 'Usuario',
-                      hintText: 'Usuario Único',
-                      keyboardType: TextInputType.name,
+                      labelText: 'Número Identificación',
+                      hintText: 'Número de Identificación',
+                      keyboardType: TextInputType.number,
                       prefixIcon: Icons.account_circle_outlined,
                       formProperty: 'userName',
                       formValues: formValues,
@@ -50,29 +55,44 @@ class LoginScreen extends StatelessWidget {
                       height: 30,
                     ),
                     CustomInputField(
-                      labelText: 'Contraseña',
-                      hintText: 'Contraseña',
-                      keyboardType: TextInputType.text,
-                      prefixIcon: Icons.security_outlined,
-                      obscureText: true,
-                      formProperty: 'password',
+                      labelText: 'Correo Electrónico',
+                      hintText: 'Correo Electrónico',
+                      keyboardType: TextInputType.emailAddress,
+                      prefixIcon: Icons.email_outlined,
+                      formProperty: 'email',
                       formValues: formValues,
                     ),
                     const SizedBox(
                       height: 30,
                     ),
+                    const Text(
+                      'Si los datos suministrados son los correctos se enviará un email con la nueva contraseña',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
+                      textAlign: TextAlign.center,
+                    ),
                     const SizedBox(
                       height: 10,
+                    ),
+                    const Text(
+                      'Si no ves el email en tu bandeja de entrada por favor revisa en la carpeta de Spam',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(
+                      height: 30,
                     ),
                     ElevatedButton(
                       child: const SizedBox(
                         width: double.infinity,
                         height: 50,
                         child: Center(
-                            child: Text(
-                          'Ingresar',
-                          style: TextStyle(fontSize: 20),
-                        )),
+                          child: Text(
+                            'Solicitar Nueva Contraseña',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ),
                       ),
                       onPressed: () {
                         FocusScope.of(context).requestFocus(FocusNode());
@@ -81,27 +101,12 @@ class LoginScreen extends StatelessWidget {
                           return;
                         }
                         print(formValues);
-                        Navigator.pushNamed(context, 'home');
+                        Navigator.pushNamed(context, 'login');
                       },
                     )
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
-              InkWell(
-                child: const Text(
-                  'Olvide mi contraseña',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: AppTheme.primary,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.pushNamed(context, 'forgotPassword');
-                },
-              )
             ]),
           ),
         ),
