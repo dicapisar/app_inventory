@@ -1,5 +1,8 @@
 # App Inventory 📦 📱
 
+![logo](https://user-images.githubusercontent.com/63562180/174454403-d326e210-ce1f-4009-9ae4-20a2aa0b028c.png)
+
+
 Bienvenidos a App Inventory, un proyecto creado como practica de la etapa lectiva del Tecnólogo "Análisis y Desarrollo de Sistemas de Información" del [SENA](http://oferta.senasofiaplus.edu.co/sofia-oferta/), a continuación se detalla los pasos necesarios para poder ejecutar la aplicación.
 
 ## Requisitos 👁‍🗨
