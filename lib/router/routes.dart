@@ -8,7 +8,12 @@ class Routes {
 
   static final routes = <ScreenRoute>[
     ScreenRoute(route: 'login', name: 'Login', screen: const LoginScreen()),
-    ScreenRoute(route: 'forgotPassword', name: 'Login Password', screen: const ForgotPasswordScreen()),
+    ScreenRoute(
+        route: 'forgotPassword',
+        name: 'Login Password',
+        screen: const ForgotPasswordScreen()),
+    ScreenRoute(route: 'list', name: 'List', screen: const ListScreen()),
+    ScreenRoute(route: 'form', name: 'Form', screen: const FormScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

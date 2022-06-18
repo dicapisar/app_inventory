@@ -9,8 +9,16 @@ class AppTheme {
 
       // AppBar Theme
       appBarTheme: const AppBarTheme(
-        color: primary,
+        color: Colors.white,
         elevation: 0,
+        titleTextStyle: TextStyle(
+          color: Colors.black,
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
+        ),
+        iconTheme: IconThemeData(
+          color: primary,
+        ),
       ),
 
       // TextButton Theme
@@ -63,4 +71,27 @@ class AppTheme {
 
       // Scaffold
       scaffoldBackgroundColor: Colors.black);
+
+  // Temas por separado
+  static const TextStyle titleScreen = TextStyle(
+    fontSize: 40,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const TextStyle titleOptionHomeMenu = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w800,
+  );
+
+   static final BoxDecoration optionMenuDecoration = BoxDecoration(
+    color: Colors.grey.shade200,
+    borderRadius: BorderRadius.circular(10),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey,
+        offset: Offset(0, 4),
+        blurRadius: 5,
+      ),
+    ],
+  );
 }

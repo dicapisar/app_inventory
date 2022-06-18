@@ -7,8 +7,12 @@ class CustomInputField extends StatelessWidget {
   final IconData? icon;
   final IconData? suffixIcon;
   final IconData? prefixIcon;
+  final bool? validation;
   final TextInputType? keyboardType;
   final bool obscureText;
+  final bool? readOnly;
+  final String? initialValue;
+  final bool? autoFocus;
 
   final String formProperty;
   final Map<String, String> formValues;
@@ -25,24 +29,30 @@ class CustomInputField extends StatelessWidget {
     this.obscureText = false,
     required this.formProperty,
     required this.formValues,
+    this.validation = false,
+    this.readOnly,
+    this.initialValue, this.autoFocus,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: keyboardType,
-      autofocus: false,
-      initialValue: '',
+      autofocus: autoFocus ?? false,
+      initialValue: initialValue ?? '',
       obscureText: obscureText,
+      readOnly: readOnly ?? false,
       textCapitalization: TextCapitalization.words,
       onChanged: (value) {
         formValues[formProperty] = value;
       },
       validator: (value) {
         if (value == null) {
-          return 'Este campo es requerido';
+          return validation == true ? 'Este campo es requerido' : null;
         }
-        return value.length < 3 ? 'Minimo de 3 letras' : null;
+        return value.length < 3 && validation == true
+            ? 'Minimo de 3 letras'
+            : null;
       },
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
