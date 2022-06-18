@@ -1,16 +1,16 @@
-# app_inventory
+# App Inventory 📦 📱
 
-A new Flutter project.
+Bienvenidos a App Inventory, un proyecto creado como practica de la etapa lectiva del Tecnólogo "Análisis y Desarrollo de Sistemas de Información" del [SENA](http://oferta.senasofiaplus.edu.co/sofia-oferta/), a continuación se detalla los pasos necesarios para poder ejecutar la aplicación.
 
-## Getting Started
+## Requisitos 👁‍🗨
 
-This project is a starting point for a Flutter application.
+- Cumplir con los siguientes Requerimientos de Hardware y Software: [Requerimientos de Hardware y Software](https://platzi.com/clases/1386-flutter/16259-requerimientos-de-hardware-y-software/)
+- Flutter
+- Android Studio / Visual Studio Code
+- Git
+ 
+## Configuración de Entorno de trabajo 🛠
 
-A few resources to get you started if this is your first Flutter project:
+- Configuración de entorno de trabajo: [Pasos para entorno de trabajo](https://giancarlocode.com/tutoriales-de-flutter/como-instalar-flutter-en-windows-10-en-android-studio-y-visual-studio-code/) 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
