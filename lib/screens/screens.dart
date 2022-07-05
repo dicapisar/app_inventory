@@ -1,9 +1,11 @@
 export 'package:app_inventory/screens/forgot_password_screen.dart';
+export 'package:app_inventory/screens/form_screen.dart';
 export 'package:app_inventory/screens/home_screen.dart';
+export 'package:app_inventory/screens/list_screen_input_record.dart';
+export 'package:app_inventory/screens/list_screen.dart';
 export 'package:app_inventory/screens/login_screen.dart';
 export 'package:app_inventory/screens/menu_screen.dart';
-export 'package:app_inventory/screens/list_screen.dart';
-export 'package:app_inventory/screens/form_screen.dart';
 export 'package:app_inventory/screens/menu_screen.dart';
 export 'package:app_inventory/screens/search_screen.dart';
 export 'package:app_inventory/screens/user_screen.dart';
+export 'package:app_inventory/screens/list_screen_output_record.dart';

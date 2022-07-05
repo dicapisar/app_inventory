@@ -14,6 +14,8 @@ class Routes {
         screen: const ForgotPasswordScreen()),
     ScreenRoute(route: 'list', name: 'List', screen: const ListScreen()),
     ScreenRoute(route: 'form', name: 'Form', screen: const FormScreen()),
+    ScreenRoute(route: 'listInputItems', name: 'List Input Items', screen: const ListScreenInputRecord()),
+    ScreenRoute(route: 'listOutputItems', name: 'List Output Items', screen: const ListScreenOutputRecord()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

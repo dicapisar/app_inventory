@@ -1,3 +1,4 @@
+import 'package:app_inventory/models/item_detail.dart';
 import 'package:app_inventory/models/models.dart';
 import 'package:app_inventory/themes/app_theme.dart';
 import 'package:app_inventory/widgets/widgets.dart';
@@ -13,6 +14,8 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
+
+
   final item1 = [
     1,
     'Titulo Ejemplo 1',
@@ -249,13 +252,13 @@ class _OptionsFilter extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const DateFilterOption(
+          DateFilterOption(
             label: 'Fecha Inicio:',
           ),
           const SizedBox(
             height: 5,
           ),
-          const DateFilterOption(label: 'Fecha Fin:'),
+          DateFilterOption(label: 'Fecha Fin:'),
           const SizedBox(
             height: 5,
           ),

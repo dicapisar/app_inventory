@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DateFilterOption extends StatelessWidget {
+class DateFilterOption extends StatefulWidget {
   final String label;
 
   const DateFilterOption({
@@ -9,7 +9,13 @@ class DateFilterOption extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<DateFilterOption> createState() => _DateFilterOptionState();
+}
+
+class _DateFilterOptionState extends State<DateFilterOption> {
+  @override
   Widget build(BuildContext context) {
+    String date = "";
     return InkWell(
       onTap: () {
         showDatePicker(
@@ -17,10 +23,14 @@ class DateFilterOption extends StatelessWidget {
                 initialDate: DateTime.now(),
                 firstDate: DateTime(DateTime.now().year - 100),
                 lastDate: DateTime(DateTime.now().year + 1))
-            .then((value) {});
+            .then((value) {
+          setState(() {
+            date = "${value!.day}/${value.month}/${value.year}";
+          });
+        });
       },
       child: Container(
-        padding: EdgeInsets.only(left: 10),
+        padding: const EdgeInsets.only(left: 10),
         height: 50,
         width: 260,
         decoration: BoxDecoration(
@@ -28,13 +38,13 @@ class DateFilterOption extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              label,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+              widget.label,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
-            Text('01/01/2022')
+            Text(date)
           ],
         ),
       ),
