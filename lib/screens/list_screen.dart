@@ -184,17 +184,19 @@ class _ListScreenState extends State<ListScreen> {
                 itemCount: items.length,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (_, int index) => ItemList(
-                    id: items[index][0],
-                    title: items[index][1],
-                    subTitle: items[index][2],
-                    details: [
-                      items[index][3],
-                      items[index][4],
-                      items[index][5],
-                    ],
-                    advise: items[index][6] == true
-                        ? AdviseItemLIst('Alerta', Colors.green)
-                        : null),
+                  id: items[index][0],
+                  title: items[index][1],
+                  subTitle: items[index][2],
+                  details: [
+                    items[index][3],
+                    items[index][4],
+                    items[index][5],
+                  ],
+                  advise: items[index][6] == true
+                      ? AdviseItemLIst('Alerta', Colors.green)
+                      : null,
+                  screenNameRoute: 'form',
+                ),
               ),
             )
           ],
@@ -206,7 +208,7 @@ class _ListScreenState extends State<ListScreen> {
             context,
             'form',
             arguments: FormScreenArguments(
-              'Creacion Nuevo ${args.singularName}',
+              title: 'Creacion Nuevo ${args.singularName}',
             ),
           );
         },

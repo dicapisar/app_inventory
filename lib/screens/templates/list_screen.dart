@@ -197,7 +197,7 @@ class _ListScreenState extends State<ListScreen> {
                     ],
                     advise: items[index][6] == true
                         ? AdviseItemLIst('Alerta', Colors.green)
-                        : null),
+                        : null, screenNameRoute: 'form',),
               ),
             )
           ],
@@ -209,7 +209,7 @@ class _ListScreenState extends State<ListScreen> {
             context,
             'form',
             arguments: FormScreenArguments(
-              'Creacion Nuevo ${args.singularName}',
+              title: 'Creacion Nuevo ${args.singularName}'
             ),
           );
         },

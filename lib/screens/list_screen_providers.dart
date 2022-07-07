@@ -8,14 +8,14 @@ import 'package:app_inventory/screens/contants.dart';
 import 'package:app_inventory/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class ListScreenInputRecord extends StatefulWidget {
-  const ListScreenInputRecord({Key? key}) : super(key: key);
+class ListScreenProviders extends StatefulWidget {
+  const ListScreenProviders({Key? key}) : super(key: key);
 
   @override
-  State<ListScreenInputRecord> createState() => _ListScreenInputRecordState();
+  State<ListScreenProviders> createState() => _ListScreenProvidersState();
 }
 
-class _ListScreenInputRecordState extends State<ListScreenInputRecord> {
+class _ListScreenProvidersState extends State<ListScreenProviders> {
   final Map<String, String> formValues = {
     'buscar': '',
   };
@@ -101,10 +101,7 @@ class _ListScreenInputRecordState extends State<ListScreenInputRecord> {
                 ),
               ],
             ),
-            ListItem(
-              itemDetail: getData(),
-              screenNameRoute: 'formImputRecord',
-            )
+            ListItem(itemDetail: getDataProviders(), screenNameRoute: 'form',)
           ],
         ),
       ),
@@ -127,9 +124,9 @@ class _ListScreenInputRecordState extends State<ListScreenInputRecord> {
   }
 }
 
-List<ItemDetail> getData() {
+List<ItemDetail> getDataProviders() {
   final List<ItemDetail> listItemDetail = [];
-  for (var inputRecord in getInfoForAPICall()) {
+  for (var inputRecord in getInfoForAPICallProviders()) {
     List<String> details = [];
     AdviseItemLIst advise = AdviseItemLIst('', Colors.transparent);
 
@@ -158,6 +155,6 @@ List<ItemDetail> getData() {
   return listItemDetail;
 }
 
-List<InputRecord> getInfoForAPICall() {
-  return Constant().getDataInputItems();
+List<InputRecord> getInfoForAPICallProviders() {
+  return Constant().getDataProviders();
 }

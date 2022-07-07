@@ -101,7 +101,7 @@ class _ListScreenOutputRecordState extends State<ListScreenOutputRecord> {
                 ),
               ],
             ),
-            ListItem(itemDetail: getDataOutputRecord())
+            ListItem(itemDetail: getDataOutputRecord(), screenNameRoute: 'form',)
           ],
         ),
       ),
@@ -111,7 +111,7 @@ class _ListScreenOutputRecordState extends State<ListScreenOutputRecord> {
             context,
             'form',
             arguments: FormScreenArguments(
-              'Creacion Nuevo ${args.singularName}',
+              title: 'Creacion Nuevo ${args.singularName}',
             ),
           );
         },
@@ -156,5 +156,5 @@ List<ItemDetail> getDataOutputRecord() {
 }
 
 List<InputRecord> getInfoForAPICallOutputRecord() {
-  return Constant().getDataInputItems();
+  return Constant().getDataOutputItems();
 }
