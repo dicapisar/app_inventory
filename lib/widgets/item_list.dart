@@ -7,12 +7,14 @@ class ItemList extends StatelessWidget {
   final String subTitle;
   final List<String>? details;
   final AdviseItemLIst? advise;
+  final String screenNameRoute;
 
   const ItemList({
     Key? key,
     required this.id,
     required this.title,
     required this.subTitle,
+    required this.screenNameRoute,
     this.details,
     this.advise,
   }) : super(key: key);
@@ -66,7 +68,7 @@ class ItemList extends StatelessWidget {
                   ),
                   Text(
                     subTitle,
-                    style: TextStyle(fontSize: 18),
+                    style: const TextStyle(fontSize: 18),
                   ),
                 ],
               ),
@@ -102,8 +104,15 @@ class ItemList extends StatelessWidget {
         ),
       ),
       onTap: () => {
-        Navigator.pushNamed(context, 'form',
-            arguments: FormScreenArguments(title))
+        Navigator.pushNamed(
+          context,
+          screenNameRoute,
+          arguments: FormScreenArguments(
+            title: title,
+            isRead: true,
+            resourceId: id,
+          ),
+        )
       },
     );
   }
@@ -124,7 +133,7 @@ class _Advised extends StatelessWidget {
             margin: const EdgeInsets.only(left: 5),
             height: 20,
             decoration: BoxDecoration(
-                color: Colors.green[400],
+                color: adviseItemLIst!.color,
                 borderRadius: BorderRadius.circular(10)),
             child: Align(
               child: Container(
