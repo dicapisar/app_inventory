@@ -1,6 +1,8 @@
 import 'package:app_inventory/models/input_record.dart';
 import 'package:app_inventory/models/item_input_db.dart';
 import 'package:app_inventory/models/item_output_db.dart';
+import 'package:app_inventory/models/itemdb.dart';
+import 'package:app_inventory/models/providresdb.dart';
 
 class Constant {
   List<InputRecord> getDataInputItems() {
@@ -521,5 +523,207 @@ class Constant {
     items.add(item10);
 
     return items;
+  }
+
+  List<ItemDB> getDataItemDB() {
+    ItemDB item1 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item2 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item3 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item4 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item5 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item6 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item7 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item8 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item9 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item10 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item11 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item12 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item13 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item14 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item15 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item16 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item17 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item18 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item19 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemDB item20 = ItemDB(1, true, 'Ingresado', 'Cuadernos', 100, 700,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+
+    List<ItemDB> items = [];
+
+    items.add(item1);
+    items.add(item2);
+    items.add(item3);
+    items.add(item4);
+    items.add(item5);
+    items.add(item6);
+    items.add(item7);
+    items.add(item8);
+    items.add(item9);
+    items.add(item10);
+    items.add(item11);
+    items.add(item12);
+    items.add(item13);
+    items.add(item14);
+    items.add(item15);
+    items.add(item16);
+    items.add(item17);
+    items.add(item18);
+    items.add(item19);
+    items.add(item20);
+
+    return items;
+  }
+
+  List<ProvidersDB> getDataProviderDB() {
+    ProvidersDB provider1 = ProvidersDB(
+      1,
+      true,
+      'Nombre Proveedor',
+      'Crra Ejemplo No. 12-12',
+      '123456789',
+      'proveedor@email.com',
+      '+57 123 232 2332',
+      DateTime.now(),
+      DateTime.now(),
+      1,
+      2,
+    );
+    ProvidersDB provider2 = ProvidersDB(
+      1,
+      true,
+      'Nombre Proveedor',
+      'Crra Ejemplo No. 12-12',
+      '123456789',
+      'proveedor@email.com',
+      '+57 123 232 2332',
+      DateTime.now(),
+      DateTime.now(),
+      1,
+      2,
+    );
+    ProvidersDB provider3 = ProvidersDB(
+      1,
+      true,
+      'Nombre Proveedor',
+      'Crra Ejemplo No. 12-12',
+      '123456789',
+      'proveedor@email.com',
+      '+57 123 232 2332',
+      DateTime.now(),
+      DateTime.now(),
+      1,
+      2,
+    );
+    ProvidersDB provider4 = ProvidersDB(
+      1,
+      true,
+      'Nombre Proveedor',
+      'Crra Ejemplo No. 12-12',
+      '123456789',
+      'proveedor@email.com',
+      '+57 123 232 2332',
+      DateTime.now(),
+      DateTime.now(),
+      1,
+      2,
+    );
+    ProvidersDB provider5 = ProvidersDB(
+      1,
+      true,
+      'Nombre Proveedor',
+      'Crra Ejemplo No. 12-12',
+      '123456789',
+      'proveedor@email.com',
+      '+57 123 232 2332',
+      DateTime.now(),
+      DateTime.now(),
+      1,
+      2,
+    );
+    ProvidersDB provider6 = ProvidersDB(
+      1,
+      true,
+      'Nombre Proveedor',
+      'Crra Ejemplo No. 12-12',
+      '123456789',
+      'proveedor@email.com',
+      '+57 123 232 2332',
+      DateTime.now(),
+      DateTime.now(),
+      1,
+      2,
+    );
+    ProvidersDB provider7 = ProvidersDB(
+      1,
+      true,
+      'Nombre Proveedor',
+      'Crra Ejemplo No. 12-12',
+      '123456789',
+      'proveedor@email.com',
+      '+57 123 232 2332',
+      DateTime.now(),
+      DateTime.now(),
+      1,
+      2,
+    );
+    ProvidersDB provider8 = ProvidersDB(
+      1,
+      true,
+      'Nombre Proveedor',
+      'Crra Ejemplo No. 12-12',
+      '123456789',
+      'proveedor@email.com',
+      '+57 123 232 2332',
+      DateTime.now(),
+      DateTime.now(),
+      1,
+      2,
+    );
+    ProvidersDB provider9 = ProvidersDB(
+      1,
+      true,
+      'Nombre Proveedor',
+      'Crra Ejemplo No. 12-12',
+      '123456789',
+      'proveedor@email.com',
+      '+57 123 232 2332',
+      DateTime.now(),
+      DateTime.now(),
+      1,
+      2,
+    );
+
+    List<ProvidersDB> providers = [];
+
+    providers.add(provider1);
+    providers.add(provider2);
+    providers.add(provider3);
+    providers.add(provider4);
+    providers.add(provider5);
+    providers.add(provider6);
+    providers.add(provider7);
+    providers.add(provider8);
+    providers.add(provider9);
+
+    return providers;
   }
 }

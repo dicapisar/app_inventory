@@ -14,6 +14,7 @@ class Routes {
         screen: const ForgotPasswordScreen()),
     ScreenRoute(route: 'list', name: 'List', screen: const ListScreen()),
     ScreenRoute(route: 'form', name: 'Form', screen: const FormScreen()),
+    ScreenRoute(route: 'formItem', name: 'Form Item', screen: const FormItemScreen()),
     ScreenRoute(route: 'formItemInput', name: 'Form Item Input', screen: const FormItemImputScreen()),
     ScreenRoute(route: 'formItemOutput', name: 'Form Item Input', screen: const FormItemOutputScreen()),
     ScreenRoute(route: 'formImputRecord', name: 'Form Input Record', screen: const FormInputRecordScreen()),

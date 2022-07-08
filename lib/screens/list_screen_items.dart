@@ -3,6 +3,7 @@ import 'package:app_inventory/models/advise_item_list.dart';
 import 'package:app_inventory/models/form_screen_arguments.dart';
 import 'package:app_inventory/models/input_record.dart';
 import 'package:app_inventory/models/item_detail.dart';
+import 'package:app_inventory/models/itemdb.dart';
 import 'package:app_inventory/models/list_screen_arguments.dart';
 import 'package:app_inventory/screens/contants.dart';
 import 'package:app_inventory/themes/app_theme.dart';
@@ -101,7 +102,10 @@ class _ListScreenItemsState extends State<ListScreenItems> {
                 ),
               ],
             ),
-            ListItem(itemDetail: getDataItems(), screenNameRoute: 'form',)
+            ListItem(
+              itemDetail: getDataItems(),
+              screenNameRoute: 'formItem',
+            )
           ],
         ),
       ),
@@ -109,7 +113,7 @@ class _ListScreenItemsState extends State<ListScreenItems> {
         onPressed: () {
           Navigator.pushNamed(
             context,
-            'form',
+            'formItem',
             arguments: FormScreenArguments(
               title: 'Creacion Nuevo ${args.singularName}',
             ),
@@ -136,14 +140,13 @@ List<ItemDetail> getDataItems() {
 
     var dateCreation = inputRecord.creationDate;
 
-    details.add(inputRecord.status);
-    details.add(inputRecord.reason);
-    details
-        .add("${dateCreation.year}/${dateCreation.month}/${dateCreation.day}");
+    details.add(inputRecord.count.toString());
+    details.add(inputRecord.brandId.toString());
+    details.add('\$ ${inputRecord.price}');
 
     final itemDetail = ItemDetail(
       inputRecord.id,
-      'Registro de Entrada No. ${inputRecord.id}',
+      inputRecord.name,
       'Id ${inputRecord.id}',
       details,
       advise,
@@ -155,6 +158,6 @@ List<ItemDetail> getDataItems() {
   return listItemDetail;
 }
 
-List<InputRecord> getInfoForAPICallItems() {
-  return Constant().getDataItems();
+List<ItemDB> getInfoForAPICallItems() {
+  return Constant().getDataItemDB();
 }

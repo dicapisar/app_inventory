@@ -18,3 +18,4 @@ export 'package:app_inventory/screens/user_screen.dart';
 export 'package:app_inventory/screens/graphics_screen.dart';
 export 'package:app_inventory/screens/form_input_record_screen.dart';
 export 'package:app_inventory/screens/form_item_input_screen.dart';
+export 'package:app_inventory/screens/form_item_screen.dart';
