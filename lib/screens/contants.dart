@@ -1,5 +1,6 @@
 import 'package:app_inventory/models/input_record.dart';
 import 'package:app_inventory/models/item_input_db.dart';
+import 'package:app_inventory/models/item_output_db.dart';
 
 class Constant {
   List<InputRecord> getDataInputItems() {
@@ -469,6 +470,44 @@ class Constant {
         DateTime.now(), DateTime.now(), 1, 1, 1, 1, 1);
 
     List<ItemImputDB> items = [];
+
+    items.add(item1);
+    items.add(item2);
+    items.add(item3);
+    items.add(item4);
+    items.add(item5);
+    items.add(item6);
+    items.add(item7);
+    items.add(item8);
+    items.add(item9);
+    items.add(item10);
+
+    return items;
+  }
+
+  List<ItemOutputDB> getDataItemOutputDB() {
+    ItemOutputDB item1 = ItemOutputDB(
+        1, true, 'In Creation', 20, DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemOutputDB item2 = ItemOutputDB(
+        2, true, 'In Creation', 10, DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemOutputDB item3 = ItemOutputDB(3, true, 'In Creation', 100,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemOutputDB item4 = ItemOutputDB(4, true, 'In Creation', 1000,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemOutputDB item5 = ItemOutputDB(
+        5, true, 'In Creation', 2, DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemOutputDB item6 = ItemOutputDB(
+        6, true, 'In Creation', 1, DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemOutputDB item7 = ItemOutputDB(
+        7, true, 'In Creation', 34, DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemOutputDB item8 = ItemOutputDB(
+        8, true, 'In Creation', 5, DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemOutputDB item9 = ItemOutputDB(
+        9, true, 'In Creation', 20, DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+    ItemOutputDB item10 = ItemOutputDB(10, true, 'In Creation', 10,
+        DateTime.now(), DateTime.now(), 1, 1, 1, 1);
+
+    List<ItemOutputDB> items = [];
 
     items.add(item1);
     items.add(item2);

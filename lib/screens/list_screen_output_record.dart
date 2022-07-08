@@ -101,7 +101,10 @@ class _ListScreenOutputRecordState extends State<ListScreenOutputRecord> {
                 ),
               ],
             ),
-            ListItem(itemDetail: getDataOutputRecord(), screenNameRoute: 'form',)
+            ListItem(
+              itemDetail: getDataOutputRecord(),
+              screenNameRoute: 'formOutputRecord',
+            )
           ],
         ),
       ),
@@ -109,7 +112,7 @@ class _ListScreenOutputRecordState extends State<ListScreenOutputRecord> {
         onPressed: () {
           Navigator.pushNamed(
             context,
-            'form',
+            'formOutputRecord',
             arguments: FormScreenArguments(
               title: 'Creacion Nuevo ${args.singularName}',
             ),
@@ -143,7 +146,7 @@ List<ItemDetail> getDataOutputRecord() {
 
     final itemDetail = ItemDetail(
       inputRecord.id,
-      'Registro de Entrada No. ${inputRecord.id}',
+      'Registro de Salida No. ${inputRecord.id}',
       'Id ${inputRecord.id}',
       details,
       advise,

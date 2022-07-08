@@ -1,3 +1,5 @@
+export 'package:app_inventory/screens/form_item_output_screen.dart';
+export 'package:app_inventory/screens/form_output_record_screen.dart';
 export 'package:app_inventory/screens/forgot_password_screen.dart';
 export 'package:app_inventory/screens/form_screen.dart';
 export 'package:app_inventory/screens/home_screen.dart';
