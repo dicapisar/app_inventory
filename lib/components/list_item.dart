@@ -22,7 +22,7 @@ class ListItem extends StatelessWidget {
     var height = size.height;
 
     return Container(
-      margin: const EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 10),
       height: isFormView != null
           ? isFormView == true
               ? height * 0.56

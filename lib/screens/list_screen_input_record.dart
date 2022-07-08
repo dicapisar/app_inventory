@@ -112,10 +112,9 @@ class _ListScreenInputRecordState extends State<ListScreenInputRecord> {
         onPressed: () {
           Navigator.pushNamed(
             context,
-            'form',
+            'formImputRecord',
             arguments: FormScreenArguments(
-              title: 'Creacion Nuevo ${args.singularName}',
-            ),
+                title: 'Creacion Nuevo ${args.singularName}', isRead: true),
           );
         },
         child: const Icon(

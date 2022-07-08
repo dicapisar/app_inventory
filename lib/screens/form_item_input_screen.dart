@@ -18,21 +18,22 @@ class FormItemImputScreen extends StatelessWidget {
 
     final bool isRead = args.isRead ?? false;
 
-    print(isRead);
-
     final GlobalKey<FormState> myFormKey = GlobalKey<FormState>();
+
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '${args.title}',
-          style: TextStyle(overflow: TextOverflow.ellipsis),
+          args.title,
+          style: const TextStyle(overflow: TextOverflow.ellipsis),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_rounded),
+          icon: const Icon(Icons.arrow_back_ios_rounded),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: [
+        actions: const [
           Icon(
             Icons.more_vert_rounded,
             color: AppTheme.primary,
@@ -42,143 +43,168 @@ class FormItemImputScreen extends StatelessWidget {
           )
         ],
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child: Column(
-            children: [
-              Form(
-                key: myFormKey,
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      body: Container(
+        color: Colors.grey[200],
+        height: height,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 10,
+          vertical: 10,
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: Column(
+                children: [
+                  Form(
+                    key: myFormKey,
+                    child: Column(
                       children: [
-                        Expanded(
-                          child: CustomInputField(
-                            labelText: 'Id',
-                            hintText: 'Id',
-                            keyboardType: TextInputType.number,
-                            formProperty: 'id',
-                            formValues: formValues,
-                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Expanded(
+                              child: CustomInputField(
+                                labelText: 'Id',
+                                hintText: 'Id',
+                                keyboardType: TextInputType.number,
+                                formProperty: 'id',
+                                formValues: formValues,
+                                readOnly: isRead,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(
+                              child: CustomInputField(
+                                labelText: 'Estado',
+                                hintText: 'Estado',
+                                keyboardType: TextInputType.text,
+                                formProperty: 'text',
+                                formValues: formValues,
+                                readOnly: isRead,
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 10,
+                        const SizedBox(
+                          height: 10,
                         ),
-                        Expanded(
-                          child: CustomInputField(
-                            labelText: 'Estado',
-                            hintText: 'Texto',
-                            keyboardType: TextInputType.text,
-                            formProperty: 'text',
-                            formValues: formValues,
-                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Expanded(
+                              child: CustomInputField(
+                                labelText: 'Articulo',
+                                hintText: 'Nombre del Articulo',
+                                keyboardType: TextInputType.number,
+                                formProperty: 'nameArticle',
+                                formValues: formValues,
+                                readOnly: isRead,
+                              ),
+                            ),
+                            if (!isRead) const _ButtonPlus()
+                          ],
                         ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Expanded(
+                              child: CustomInputField(
+                                labelText: 'Cantidad',
+                                hintText: 'Cantidad',
+                                keyboardType: TextInputType.number,
+                                formProperty: 'count',
+                                formValues: formValues,
+                                readOnly: isRead,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(
+                              child: CustomInputField(
+                                labelText: 'Costo por Unidad',
+                                hintText: '\$ XX.XXX',
+                                keyboardType: TextInputType.number,
+                                formProperty: 'cost',
+                                formValues: formValues,
+                                readOnly: isRead,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Expanded(
+                              child: CustomInputField(
+                                labelText: 'Proveedor',
+                                hintText: 'Nombre del Proveedor',
+                                keyboardType: TextInputType.number,
+                                formProperty: 'nameProvider',
+                                formValues: formValues,
+                                readOnly: isRead,
+                              ),
+                            ),
+                            if (!isRead) const _ButtonPlus()
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        if (!isRead) const _OptiosButtonsSearch()
                       ],
                     ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Expanded(
-                          child: CustomInputField(
-                            labelText: 'Articulo',
-                            hintText: 'Id',
-                            keyboardType: TextInputType.number,
-                            formProperty: 'id',
-                            formValues: formValues,
-                          ),
-                        ),
-                        if (isRead) const _ButtonPlus()
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Expanded(
-                          child: CustomInputField(
-                            labelText: 'Cantidad',
-                            hintText: 'Id',
-                            keyboardType: TextInputType.number,
-                            formProperty: 'id',
-                            formValues: formValues,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Expanded(
-                          child: CustomInputField(
-                            labelText: 'Costo por Unidad',
-                            hintText: 'Texto',
-                            keyboardType: TextInputType.text,
-                            formProperty: 'text',
-                            formValues: formValues,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Expanded(
-                          child: CustomInputField(
-                            labelText: 'Proveedor',
-                            hintText: 'Id',
-                            keyboardType: TextInputType.number,
-                            formProperty: 'id',
-                            formValues: formValues,
-                          ),
-                        ),
-                        if (isRead) const _ButtonPlus()
-                      ],
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        _ButtonSearch(
-                          bigIcon: Icon(Icons.qr_code),
-                          smallIcon: Icon(Icons.search),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        _ButtonSearch(
-                          bigIcon: Icon(
-                            Icons.line_weight_sharp,
-                          ),
-                          smallIcon: Icon(Icons.search),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: Icon(
-          Icons.save,
-          size: 40,
-        ),
+      floatingActionButton: _FloatingAcctionButton(
+        isRead: isRead,
       ),
+    );
+  }
+}
+
+class _FloatingAcctionButton extends StatelessWidget {
+  final bool isRead;
+  const _FloatingAcctionButton({
+    Key? key,
+    required this.isRead,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    const Icon saveIcon = Icon(
+      Icons.save,
+      size: 45,
+    );
+    const Icon backIcon = Icon(
+      Icons.arrow_back,
+      size: 45,
+    );
+
+    return FloatingActionButton(
+      backgroundColor: isRead ? Colors.red : Colors.green,
+      onPressed: () {
+        Navigator.pop(context);
+      },
+      child: isRead ? backIcon : saveIcon,
     );
   }
 }
@@ -196,11 +222,37 @@ class _ButtonPlus extends StatelessWidget {
         color: Colors.green[300],
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Icon(
+      child: const Icon(
         Icons.add,
         size: 50,
         color: Colors.white,
       ),
+    );
+  }
+}
+
+class _OptiosButtonsSearch extends StatelessWidget {
+  const _OptiosButtonsSearch({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: const [
+        _ButtonSearch(
+          bigIcon: Icon(Icons.qr_code),
+          smallIcon: Icon(Icons.search),
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        _ButtonSearch(
+          bigIcon: Icon(
+            Icons.line_weight_sharp,
+          ),
+          smallIcon: Icon(Icons.search),
+        ),
+      ],
     );
   }
 }
