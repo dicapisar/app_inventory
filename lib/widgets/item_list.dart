@@ -88,7 +88,8 @@ class ItemList extends StatelessWidget {
                   width: (width - 100) / 3,
                   child: Text(
                     details![1],
-                    style: const TextStyle(fontSize: 15),
+                    style: const TextStyle(
+                        fontSize: 15, overflow: TextOverflow.ellipsis),
                   ),
                 ),
                 SizedBox(
