@@ -7,12 +7,14 @@ class OptionHomeMenu extends StatelessWidget {
   final String pathImage;
   final String title;
   final String singularName;
+  final String nameNextScreen;
 
   const OptionHomeMenu({
     Key? key,
     required this.pathImage,
     required this.title,
     required this.singularName,
+    required this.nameNextScreen,
   }) : super(key: key);
 
   @override
@@ -37,7 +39,7 @@ class OptionHomeMenu extends StatelessWidget {
         ),
       ),
       onTap: () {
-        Navigator.pushNamed(context, 'list',
+        Navigator.pushNamed(context, nameNextScreen,
             arguments: ListScreenArguments(title, singularName));
       },
     );

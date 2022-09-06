@@ -1,3 +1,4 @@
+import 'package:app_inventory/services/session_service.dart';
 import 'package:app_inventory/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class UserScreen extends StatelessWidget {
       child: Column(
         children: [
           AppBar(
-            title: Text('Usuario'),
+            title: const Text('Usuario'),
           ),
           Container(
               child: Column(
@@ -53,7 +54,7 @@ class _Form extends StatelessWidget {
       key: myFormKey,
       child: Column(
         children: [
-          _UserPhoto(),
+          const _UserPhoto(),
           const SizedBox(
             height: 30,
           ),
@@ -85,14 +86,14 @@ class _Form extends StatelessWidget {
             initialValue: 'Contrasena',
             icon: Icons.mode_edit_sharp,
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          _AboutApplicationText(),
-          SizedBox(
+          const _AboutApplicationText(),
+          const SizedBox(
             height: 30,
           ),
-          _CloseSession()
+          const _CloseSession()
         ],
       ),
     );
@@ -116,7 +117,7 @@ class _UserPhoto extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(right: 25),
+          margin: const EdgeInsets.only(right: 25),
           width: 70,
           height: 70,
           decoration: BoxDecoration(
@@ -124,7 +125,7 @@ class _UserPhoto extends StatelessWidget {
             borderRadius: BorderRadius.circular(50),
             boxShadow: AppTheme.optionMenuDecoration.boxShadow,
           ),
-          child: Icon(
+          child: const Icon(
             Icons.file_upload_outlined,
             color: Colors.white,
             size: 50,
@@ -151,7 +152,7 @@ class _AboutApplicationText extends StatelessWidget {
         ),
       ),
       onTap: () {
-        AboutDialog about = AboutDialog();
+        AboutDialog about = const AboutDialog();
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -178,8 +179,10 @@ class _CloseSession extends StatelessWidget {
           decoration: TextDecoration.underline,
         ),
       ),
-      onTap: () =>
-          Navigator.pushNamedAndRemoveUntil(context, 'login', (route) => false),
+      onTap: () async => {
+        await SesionService.logout(),
+        Navigator.pushNamedAndRemoveUntil(context, 'login', (route) => false),
+      },
     );
   }
 }

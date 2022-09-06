@@ -14,6 +14,18 @@ class Routes {
         screen: const ForgotPasswordScreen()),
     ScreenRoute(route: 'list', name: 'List', screen: const ListScreen()),
     ScreenRoute(route: 'form', name: 'Form', screen: const FormScreen()),
+    ScreenRoute(route: 'formItem', name: 'Form Item', screen: const FormItemScreen()),
+    ScreenRoute(route: 'formItemInput', name: 'Form Item Input', screen: const FormItemImputScreen()),
+    ScreenRoute(route: 'formItemOutput', name: 'Form Item Input', screen: const FormItemOutputScreen()),
+    ScreenRoute(route: 'formImputRecord', name: 'Form Input Record', screen: const FormInputRecordScreen()),
+    ScreenRoute(route: 'formOutputRecord', name: 'Form Input Record', screen: const FormOutputRecordScreen()),
+    ScreenRoute(route: 'listInputItems', name: 'List Input Items', screen: const ListScreenInputRecord()),
+    ScreenRoute(route: 'listOutputItems', name: 'List Output Items', screen: const ListScreenOutputRecord()),
+    ScreenRoute(route: 'listItems', name: 'List Items', screen: const ListScreenItems()),
+    ScreenRoute(route: 'listProviders', name: 'List Items', screen: const ListScreenProviders()),
+    ScreenRoute(route: 'listBrands', name: 'List Items', screen: const ListScreenBrands()),
+    ScreenRoute(route: 'listTypesItems', name: 'List Items', screen: const ListScreenTypeItems()),
+    ScreenRoute(route: 'graphics', name: 'Graphics', screen: const GraphicsScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
