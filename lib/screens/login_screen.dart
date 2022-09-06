@@ -1,4 +1,6 @@
 import 'package:app_inventory/components/components.dart';
+import 'package:app_inventory/models/api/login.dart';
+import 'package:app_inventory/services/session_service.dart';
 import 'package:app_inventory/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -94,13 +96,18 @@ class _Form extends StatelessWidget {
                 ),
               ),
             ),
-            onPressed: () {
+            onPressed: () async {
               FocusScope.of(context).requestFocus(FocusNode());
               if (!myFormKey.currentState!.validate()) {
                 return;
               }
-              if (!formValues[0].toString().isNotEmpty &&
-                  !formValues[1].toString().isNotEmpty) {
+
+              Login login =
+                  Login(formValues['userName']!, formValues['password']!);
+
+              var response = await SesionService.login(login);
+
+              if (response == null) {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) => AlertDialog(
@@ -118,12 +125,13 @@ class _Form extends StatelessWidget {
                   ),
                 );
                 return;
+              } else {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  'home',
+                  (route) => false,
+                );
               }
-              Navigator.pushNamedAndRemoveUntil(
-                context,
-                'home',
-                (route) => false,
-              );
             },
           )
         ],
